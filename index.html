@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duo Hub 🦉</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7f8;
+      color: #222;
+    }
+
+    header {
+      background: #58cc02;
+      color: white;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    nav button {
+      border: none;
+      background: white;
+      color: #58cc02;
+      font-weight: bold;
+      padding: 9px 14px;
+      margin-left: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      transform: translateY(-2px);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 4px 15px #0001;
+    }
+
+    .duo {
+      font-size: 120px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      user-select: none;
+    }
+
+    .duo:hover {
+      transform: scale(1.08) rotate(-3deg);
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin: 10px 0;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: 0 3px 12px #0001;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery div {
+      background: white;
+      border-radius: 16px;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      box-shadow: 0 3px 10px #0001;
+    }
+
+    .fact {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 12px 0;
+      box-shadow: 0 3px 10px #0001;
+    }
+
+    .fan {
+      background: #fff;
+      border: 3px dashed #58cc02;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 12px;
+      background: #eef8e9;
+      border-radius: 12px;
+      font-size: 13px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🦉 Duo Hub</h1>
+
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('gallery')">Gallery</button>
+    <button onclick="showSection('facts')">Facts</button>
+    <button onclick="showSection('interactive')">Duo</button>
+    <button onclick="showSection('fanart')">Fan Art</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home" class="section active">
+
+    <div class="hero">
+      <div class="duo" onclick="duoReaction()">🦉</div>
+
+      <h2>Welcome to Duo Hub!</h2>
+
+      <p>
+        A fan-made place to explore, collect, and celebrate Duo.
+      </p>
+
+      <div class="cards">
+
+        <div class="card" onclick="showSection('gallery')">
+          <h3>📸 Duo Gallery</h3>
+          <p>Explore different Duo artwork and poses.</p>
+        </div>
+
+        <div class="card" onclick="showSection('facts')">
+          <h3>📚 Duo Facts</h3>
+          <p>Learn more about the Duolingo mascot.</p>
+        </div>
+
+        <div class="card" onclick="showSection('interactive')">
+          <h3>🎭 Interactive Duo</h3>
+          <p>Click Duo and see what happens!</p>
+        </div>
+
+        <div class="card" onclick="showSection('fanart')">
+          <h3>🎨 Fan Art</h3>
+          <p>A place for your own Duo artwork.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+
+    <h2>📸 Duo Gallery</h2>
+
+    <div class="gallery">
+      <div>🦉</div>
+      <div>🦉✨</div>
+      <div>🦉😎</div>
+      <div>🦉📚</div>
+      <div>🦉🔥</div>
+      <div>🦉🎉</div>
+    </div>
+
+    <div class="notice">
+      Replace these placeholders with your own fan artwork.
+    </div>
+
+  </section>
+
+
+  <!-- FACTS -->
+  <section id="facts" class="section">
+
+    <h2>📚 About Duo</h2>
+
+    <div class="fact">
+      <h3>🦉 Who is Duo?</h3>
+      <p>
+        Duo is the owl mascot associated with Duolingo and its language-learning experience.
+      </p>
+    </div>
+
+    <div class="fact">
+      <h3>🌎 What does Duo represent?</h3>
+      <p>
+        Duo is strongly associated with language learning, practice, and keeping learners motivated.
+      </p>
+    </div>
+
+    <div class="fact">
+      <h3>🔥 The famous streak</h3>
+      <p>
+        Duo is also closely associated with Duolingo's streak system.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- INTERACTIVE -->
+  <section id="interactive" class="section">
+
+    <div class="hero">
+
+      <h2>🎭 Interactive Duo</h2>
+
+      <div
+        id="interactiveDuo"
+        class="duo"
+        onclick="changeDuo()">
+        🦉
+      </div>
+
+      <p id="duoMessage">
+        Click Duo!
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAN ART -->
+  <section id="fanart" class="section">
+
+    <h2>🎨 Fan Art</h2>
+
+    <div class="fan">
+
+      <div style="font-size:80px;">🦉</div>
+
+      <h3>Your artwork goes here!</h3>
+
+      <p>
+        Add your own Duo drawings, illustrations, animations,
+        or fan-made projects here.
+      </p>
+
+    </div>
+
+    <div class="notice">
+      This is an unofficial fan project and is not affiliated with Duolingo.
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  Duo Hub 🦉 — Unofficial fan project
+</footer>
+
+
+<script>
+
+  function showSection(sectionName) {
+
+    const sections = document.querySelectorAll(".section");
+
+    sections.forEach(section => {
+      section.classList.remove("active");
+    });
+
+    document
+      .getElementById(sectionName)
+      .classList.add("active");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+
+  function duoReaction() {
+
+    const reactions = [
+      "🦉",
+      "🦉😎",
+      "🦉🔥",
+      "🦉✨",
+      "🦉📚",
+      "🦉🎉"
+    ];
+
+    const duo = document.querySelector(".hero .duo");
+
+    duo.textContent =
+      reactions[Math.floor(Math.random() * reactions.length)];
+  }
+
+
+  const duoReactions = [
+    ["🦉😎", "Duo is feeling cool."],
+    ["🦉🔥", "STREAK MODE ACTIVATED!"],
+    ["🦉📚", "Time to learn!"],
+    ["🦉😳", "Uh oh..."],
+    ["🦉🎉", "Lesson complete!"],
+    ["🦉✨", "Nice work!"]
+  ];
+
+
+  function changeDuo() {
+
+    const random =
+      duoReactions[
+        Math.floor(Math.random() * duoReactions.length)
+      ];
+
+    document.getElementById("interactiveDuo").textContent = random[0];
+
+    document.getElementById("duoMessage").textContent = random[1];
+  }
+
+</script>
+
+</body>
+</html>
